@@ -4,10 +4,10 @@
     ViewBag.Title = "Edit Teacher";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("EditTeachers", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -45,6 +45,15 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="profileImage">Profile Image</label>
+            <input type="file" name="profileImage" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="resume">Resume</label>
+            <input type="file" name="resume" class="form-control" />
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Update" class="btn btn-warning" />

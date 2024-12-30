@@ -10,5 +10,6 @@ namespace EmployeeDetailsApp.Models
     {
         public ApplicationDbContext() : base("name=MyConnection") { }
         public DbSet<Teacher> Teachers { get; set;}
+        //public DbSet<Student> students { get; set; }
     }
 }

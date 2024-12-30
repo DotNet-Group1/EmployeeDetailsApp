@@ -1,0 +1,71 @@
+﻿@model IEnumerable<EmployeeDetailsApp.Models.Teacher>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetAllTeachers</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "AddTeachers")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JoiningDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.profileImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.resume)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JoiningDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.profileImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.resume)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.EmpId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.EmpId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.EmpId })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

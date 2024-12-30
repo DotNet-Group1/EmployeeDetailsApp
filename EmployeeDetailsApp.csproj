@@ -136,6 +136,10 @@
     <Compile Include="Migrations\202411301421088_InitialCreate.designer.cs">
       <DependentUpon>202411301421088_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202412150959465_AddProfileImageAndResume.cs" />
+    <Compile Include="Migrations\202412150959465_AddProfileImageAndResume.designer.cs">
+      <DependentUpon>202412150959465_AddProfileImageAndResume.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -183,9 +187,11 @@
     <Content Include="Views\Employee\EditTeachers.cshtml" />
     <Content Include="Views\Employee\GetTeachers.cshtml" />
     <Content Include="Views\Employee\Delete.cshtml" />
+    <Content Include="Views\Employee\GetAllTeachers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -203,6 +209,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202411301421088_InitialCreate.resx">
       <DependentUpon>202411301421088_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412150959465_AddProfileImageAndResume.resx">
+      <DependentUpon>202412150959465_AddProfileImageAndResume.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

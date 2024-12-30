@@ -38,6 +38,25 @@
             @Html.DisplayFor(model => model.JoiningDate)
         </dd>
 
+        <dd>
+            <p>
+                <strong>Profile Image:</strong>
+                @if (!string.IsNullOrEmpty(Model.profileImage))
+                {
+                    <img src="@Url.Content(Model.profileImage)" alt="Profile Image" style="width:100px; height:100px;" />
+                }
+            </p>
+        </dd>
+
+        <dd>
+            <p>
+                <strong>Resume:</strong>
+                @if (!string.IsNullOrEmpty(Model.resume))
+                {
+                    <a href="@Url.Content(Model.resume)" target="_blank">Download CV</a>
+                }
+            </p>
+        </dd>
     </dl>
 </div>
 <p>

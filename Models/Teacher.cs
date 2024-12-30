@@ -22,5 +22,7 @@ namespace EmployeeDetailsApp.Models
         public string EmailId { get; set; }
         [DataType(DataType.Date)]
         public DateTime JoiningDate { get; set; }
+        public string profileImage { get; set; }
+        public string resume { get; set; }
     }
 }
