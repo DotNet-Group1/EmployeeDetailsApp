@@ -6,7 +6,7 @@
 
 <center><h2>List of Teachers</h2></center>
 
-@*<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>*@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
     .search-container {
         margin-bottom: 20px;
@@ -29,41 +29,44 @@
 <p>
     @Html.ActionLink("Add Teacher", "AddTeachers")
 </p>
-@*<div class="search-container">
+<div class="search-container">
     <input type="text" id="searchInput" placeholder="Search..." />
-</div>*@
+</div>
 <table id="dataTable" class="table">
-    <tr>
-        <th>ID</th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.Name)*@
-            Name
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.Age)*@
-            Age
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.EmailId)*@
-            Email ID
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.JoiningDate)*@
-            Joining Date
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.profileImage)*@
-            Image
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.resume)*@
-            Resume
-        </th>
-        <th></th>
-    </tr>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Name)*@
+                Name
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Age)*@
+                Age
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.EmailId)*@
+                Email ID
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.JoiningDate)*@
+                Joining Date
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.profileImage)*@
+                Image
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.resume)*@
+                Resume
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 
     @foreach (var item in Model)
     {
+    <tbody>
         <tr>
             <td>@item.EmpId</td>
             <td>
@@ -96,7 +99,7 @@
                 @if (!string.IsNullOrEmpty(item.resume))
                 {
                     <a href="@Url.Content(item.resume)" target="_blank">Download Resume</a>
-                 }
+                }
             </td>
             <td style="width: 20%">
                 @Html.ActionLink("Edit", "EditTeachers", new { id = item.EmpId }, new { @class = "btn btn-warning" }) |
@@ -104,17 +107,19 @@
                 @Html.ActionLink("Delete", "Delete", new { id = item.EmpId }, new { @class = "btn btn-danger" })
             </td>
         </tr>
+
+    </tbody>
     }
 
 </table>
 
 
-@*
+
     <script>
     $(document).ready(function () {
         // Search functionality
         $('#searchInput').on('keyup', function () {
-            var searchTerm = $(this).val().toLowerCase();
+            var searchTerm = $(this).val().toLowerCase(); //ABHDCcsdg
             $('#dataTable tbody tr').each(function () {
                 var rowText = $(this).text().toLowerCase();
                 if (rowText.indexOf(searchTerm) === -1) {
@@ -126,4 +131,4 @@
         });
     });
 </script>
-    *@
+    
