@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<EmployeeDetailsApp.Models.Teacher>
 
 @{
-    ViewBag.Title = "Teachers List";
+    ViewBag.Title = "tblTeachers List";
 }
 
-<center><h2>List of Teachers</h2></center>
+<center><h2>List of tblTeachers</h2></center>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style>
@@ -27,7 +27,7 @@
     }
 </style>
 <p>
-    @Html.ActionLink("Add Teacher", "AddTeachers")
+    @Html.ActionLink("Add Teacher", "AddtblTeachers")
 </p>
 <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search..." />
@@ -102,8 +102,8 @@
                 }
             </td>
             <td style="width: 20%">
-                @Html.ActionLink("Edit", "EditTeachers", new { id = item.EmpId }, new { @class = "btn btn-warning" }) |
-                @Html.ActionLink("View", "GetTeachers", new { id = item.EmpId }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Edit", "EdittblTeachers", new { id = item.EmpId }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("View", "GettblTeachers", new { id = item.EmpId }, new { @class = "btn btn-info" }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.EmpId }, new { @class = "btn btn-danger" })
             </td>
         </tr>

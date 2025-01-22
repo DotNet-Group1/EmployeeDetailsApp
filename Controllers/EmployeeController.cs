@@ -15,24 +15,24 @@ namespace EmployeeDetailsApp.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
 
-        // GET: Teachers
+        // GET: tblTeachers
         [HttpGet]
         public ActionResult Index()
         {
-            var empList = db.Teachers.ToList();
+            var empList = db.tblTeachers.ToList();
             return View(empList);
         }
 
         //get for add teachers
         [HttpGet]
-        public ActionResult AddTeachers()
+        public ActionResult AddtblTeachers()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddTeachers(Teacher objData, HttpPostedFileBase profileImage, HttpPostedFileBase resume)
+        public ActionResult AddtblTeachers(Teacher objData, HttpPostedFileBase profileImage, HttpPostedFileBase resume)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace EmployeeDetailsApp.Controllers
                     resume.SaveAs(filePath);
                     objData.resume = "/Uploads/Resumes/" + Path.GetFileName(resume.FileName);
                 }
-                db.Teachers.Add(objData);
+                db.tblTeachers.Add(objData);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -89,10 +89,10 @@ namespace EmployeeDetailsApp.Controllers
         }
 
         [HttpGet]
-        public ActionResult EditTeachers(int? id)
+        public ActionResult EdittblTeachers(int? id)
         {
             var db = new ApplicationDbContext();
-            var data = db.Teachers.Find(id);
+            var data = db.tblTeachers.Find(id);
             //db.Entry(data).State = System.Data.Entity.EntityState.Modified;
             //db.SaveChanges();
             return View(data);
@@ -100,13 +100,13 @@ namespace EmployeeDetailsApp.Controllers
               
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditTeachers(Teacher teacher, HttpPostedFileBase profileImage, HttpPostedFileBase resume)
+        public ActionResult EdittblTeachers(Teacher teacher, HttpPostedFileBase profileImage, HttpPostedFileBase resume)
         {
             if (ModelState.IsValid)
             {
                 using (var db = new ApplicationDbContext())
                 {
-                    var existingTeacher = db.Teachers.Find(teacher.EmpId);
+                    var existingTeacher = db.tblTeachers.Find(teacher.EmpId);
                     if (existingTeacher != null)
                     {
                         if (profileImage != null && profileImage.ContentLength > 0)
@@ -165,11 +165,11 @@ namespace EmployeeDetailsApp.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetTeachers(int? id)
+        public ActionResult GettblTeachers(int? id)
         {
             using(var db = new ApplicationDbContext())
             {
-                var data = db.Teachers.Find(id);
+                var data = db.tblTeachers.Find(id);
                 if (data == null)
                 {
                     return HttpNotFound();
@@ -188,7 +188,7 @@ namespace EmployeeDetailsApp.Controllers
 
             using (var db = new ApplicationDbContext())
             {
-                var teacher = db.Teachers.Find(id);
+                var teacher = db.tblTeachers.Find(id);
                 if (teacher == null)
                 {
                     return HttpNotFound(); // Return HTTP 404 if the teacher is not found
@@ -203,19 +203,19 @@ namespace EmployeeDetailsApp.Controllers
         {
             using (var db = new ApplicationDbContext())
             {
-                var teacher = db.Teachers.Find(id);
+                var teacher = db.tblTeachers.Find(id);
                 if (teacher != null)
                 {
-                    db.Teachers.Remove(teacher); 
+                    db.tblTeachers.Remove(teacher); 
                     db.SaveChanges(); 
                 }
             }
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public ActionResult GetAllTeachers()
+        public ActionResult GetAlltblTeachers()
         {
-            var empList = db.Teachers.ToList();
+            var empList = db.tblTeachers.ToList();
             return View(empList);
         }
 

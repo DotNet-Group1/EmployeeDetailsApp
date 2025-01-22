@@ -9,7 +9,7 @@ namespace EmployeeDetailsApp.Models
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext() : base("name=MyConnection") { }
-        public DbSet<Teacher> Teachers { get; set;}
+        public DbSet<Teacher> tblTeachers { get; set;}
         //public DbSet<Student> students { get; set; }
     }
 }

@@ -132,13 +132,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202411301421088_InitialCreate.cs" />
-    <Compile Include="Migrations\202411301421088_InitialCreate.designer.cs">
-      <DependentUpon>202411301421088_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202412150959465_AddProfileImageAndResume.cs" />
-    <Compile Include="Migrations\202412150959465_AddProfileImageAndResume.designer.cs">
-      <DependentUpon>202412150959465_AddProfileImageAndResume.cs</DependentUpon>
+    <Compile Include="Migrations\202501190923372_InitialCreate.cs" />
+    <Compile Include="Migrations\202501190923372_InitialCreate.designer.cs">
+      <DependentUpon>202501190923372_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -207,11 +203,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202411301421088_InitialCreate.resx">
-      <DependentUpon>202411301421088_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202412150959465_AddProfileImageAndResume.resx">
-      <DependentUpon>202412150959465_AddProfileImageAndResume.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202501190923372_InitialCreate.resx">
+      <DependentUpon>202501190923372_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

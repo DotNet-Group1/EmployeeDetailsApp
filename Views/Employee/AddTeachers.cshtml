@@ -1,12 +1,12 @@
 ﻿@model EmployeeDetailsApp.Models.Teacher
 
 @{
-    ViewBag.Title = "AddTeachers";
+    ViewBag.Title = "AddtblTeachers";
 }
 
-<h2>AddTeachers</h2>
+<h2>AddtblTeachers</h2>
 
-@using (Html.BeginForm("AddTeachers", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("AddtblTeachers", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
 
 {
     @Html.AntiForgeryToken()
@@ -72,7 +72,7 @@
         </div>*@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Add Teachers" class="btn btn-primary" />
+                <input type="submit" value="Add tblTeachers" class="btn btn-primary" />
             </div>
         </div>
     </div>
